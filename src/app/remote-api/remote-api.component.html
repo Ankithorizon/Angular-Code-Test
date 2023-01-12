@@ -1,1 +1,68 @@
-<p>remote-api works!</p>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h3>Remote-Api</h3>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<p></p>
+<div class="row">
+    <div class="col-sm-3">      
+    </div>
+    <div *ngIf="randomUser.results?.length>0"
+        class="col-sm-6">    
+        <span >
+            <img src="{{randomUser.results[0].picture.medium}}" 
+                width="100px" height="120px" />
+        </span>  
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            {{displayName(randomUser.results[0].name)}}
+        </span>
+    </div>
+    <div class="col-sm-3">       
+    </div>
+</div>
+
+<p></p>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        {{randomUserString}}
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+<p></p>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <button (click)="nextUserData()" 
+            type="button" class="btn btn-success">
+            Next Data
+        </button>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<p></p>
+<div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div *ngIf="pageData.results?.length>0 && data; else noData" 
+        class="col-sm-6">
+        <span>
+            <img src="{{pageData.results[0].picture.medium}}" width="100px" height="120px" />
+        </span>
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            {{displayName(pageData.results[0].name)}}
+        </span>     
+    </div>
+    <ng-template #noData>
+        <div class="noData col-sm-6">
+            No Data
+        </div>
+    </ng-template>
+    <div class="col-sm-3">
+    </div>
+</div>

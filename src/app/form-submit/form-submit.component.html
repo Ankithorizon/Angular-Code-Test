@@ -1,1 +1,59 @@
-<p>form-submit works!</p>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <h3>Form-Validation-Submit</h3>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+<p></p>
+
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <form 
+            [formGroup]="form" 
+            (ngSubmit)="formDataSubmit()">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" 
+                    formControlName="Email" 
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['Email'].errors }" />
+                <div *ngIf="submitted && f['Email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Email'].errors['required']">
+                        Email is required
+                    </div>
+                    <div *ngIf="f['Email'].errors['email']">Email is invalid</div>
+                </div>
+            </div>
+        
+            <p></p>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" 
+                    formControlName="Password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }" />
+                <div *ngIf="submitted && f['Password'].errors" 
+                    class="invalid-feedback">
+                    <div *ngIf="f['Password'].errors['required']">
+                        Password is required
+                    </div>
+                    <div *ngIf="f['Password'].errors['minlength']">
+                        Password must be at least 6 characters
+                    </div>
+                    <div *ngIf="f['Password'].errors['maxlength']">
+                        Password must not exceed 40 characters
+                    </div>
+                </div>
+            </div>
+            <p></p>
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">
+                    Login
+                </button>              
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
