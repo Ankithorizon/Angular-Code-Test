@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h3>Counter Test</h3>
+    </div>
+    <div class="col-sm-4"></div>    
+</div>
+<p></p>
+<div class="row">
+    <div class="col-sm-4">
+        <button (click)="incrementCounter()" 
+            type="button" class="btn btn-success">
+            Counter-Increment
+        </button>
+    </div>
+    <div class="col-sm-4">
+        <button (click)="resetCounter()" type="button" class="btn btn-info">
+            Counter-Reset
+        </button>
+    </div>
+    <div class="col-sm-4">
+        <button (click)="decrementCounter()" type="button" class="btn btn-warning">
+            Counter-Decrement
+        </button>
+    </div>  
+</div>
+<p></p>
+<div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-3">
+        <h3>{{counter}}</h3>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

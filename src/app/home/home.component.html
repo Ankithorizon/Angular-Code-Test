@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <b>Counter Button</b>
+                </div>
+                <div class="card-body">
+                    Button click event increment Counter state value
+                </div>
+                <div class="card-footer">
+                    <button type="button" 
+                    (click)="getCodeFor('counter')"
+                        class="btn btn-success">
+                        See code...
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <b>Remote Api Call</b>
+                </div>
+                <div class="card-body">
+                    <span class="remoteApiText">
+                        https://randomuser.me/api
+                    </span>
+                    <br />
+                    <span>
+                        component load(useEffect) calls remote api(returns json[])
+                        display json[] data(string, image) to table
+                        [NEXT] button gets single data[record by record] from remote api,,, user clickes [NEXT] button and gets next
+                        data[record] each time
+                    </span>  
+                </div>
+                <div class="card-footer">
+                    <button (click)="getCodeFor('remote-api')" type="button" class="btn btn-success">
+                        See code...
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <b>Form-Submit-Validation</b>
+                </div>
+                <div class="card-body">   
+                    <span>
+                        form submit
+                    </span>    
+                    <br />          
+                    <span>                    
+                        form validation
+                    </span>
+                </div>
+                <div class="card-footer">
+                    <button (click)="getCodeFor('form-submit')" type="button" class="btn btn-success">
+                        See code...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
