@@ -20,6 +20,7 @@
     </div>
     <div *ngIf="selectedUser!=null" class="col-sm-6">
         <app-detail
+            (nameUpdateEvent)="updateNameAndParentComponent($event)"
             [selectedUser] = selectedUser>
         </app-detail>
     </div>

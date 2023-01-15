@@ -37,4 +37,17 @@ export class MasterDetailComponent implements OnInit {
   getSelectedUser(selectedUser) {
     this.selectedUser = selectedUser;
   }
+  updateNameAndParentComponent(updatedNameValue: string) {
+    console.log("master is called from child", updatedNameValue);
+
+    let updateUser = this.users.find(this.findIndexToUpdate, this.selectedUser.name);
+
+    let index = this.users.indexOf(updateUser);
+
+    this.users[index].name = updatedNameValue;
+  }
+  findIndexToUpdate(updatedUser) { 
+    return updatedUser.name === this;
+  }
+  
 }
