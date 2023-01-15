@@ -1,0 +1,30 @@
+<div *ngIf="selectedUser!=null">
+    <h4>Username : {{selectedUser.username}}</h4>
+    <h4>Name : {{selectedUser.name}}</h4>
+    <h4>Email : {{selectedUser.email}}</h4>
+</div>
+<p></p>
+<div>
+    <form [formGroup]="form" 
+        (ngSubmit)="formDataSubmit()">
+        <div class="form-group">
+            <label>Change Name?</label>
+            <input type="text" 
+                formControlName="name" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+            <div *ngIf="submitted && f['name'].errors" 
+                class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">
+                    Name is required
+                </div>           
+            </div>
+        </div>   
+        <p></p>
+    
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">
+                Change Name
+            </button>
+        </div>
+    </form>
+</div>

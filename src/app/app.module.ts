@@ -21,6 +21,7 @@ import { MasterDetailComponent } from './master-detail/master-detail.component';
 // services
 import { DataService } from './services/data.service';
 import { LocalDataService } from './services/local-data.service';
+import { DetailComponent } from './master-detail/detail/detail.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { LocalDataService } from './services/local-data.service';
     RemoteApiComponent,
     FormSubmitComponent,
     PagingComponent,
-    MasterDetailComponent
+    MasterDetailComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

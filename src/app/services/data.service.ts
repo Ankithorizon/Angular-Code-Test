@@ -9,6 +9,7 @@ import { LocalDataService } from '../services/local-data.service';
 export class DataService {
 
   public Random_User_Api = 'https://randomuser.me/api';
+  public Users_Api = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(
     private http: HttpClient,
@@ -21,5 +22,9 @@ export class DataService {
 
   nextPageDataFromRemoteApi(nextPage): Observable<any> {
     return this.http.get<any>(this.Random_User_Api+"?page="+nextPage);
+  }
+
+  getUsers(): Observable<any> {
+    return this.http.get<any>(this.Users_Api);
   }
 }
