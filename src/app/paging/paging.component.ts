@@ -86,45 +86,30 @@ export class PagingComponent implements OnInit {
       if (myData[r] !== undefined) pageData_.push(myData[r]);
     }
     this.pageData = [...pageData_];
-
-    console.log(this.pageData);
   }
   nextPageData() {
-
-    console.log(this.currentPage, this.totalPages);
-
     if (this.currentPage + 1 > this.totalPages) return;
     else {
       this.currentPage  = this.currentPage + 1;
 
       var pageData_ = [];
-      // let lastIndex = ((this.currentPage + 1) * this.recordsPerPage) - 1;
-      // let beginIndex = lastIndex - this.recordsPerPage + 1;
-      
-      
-      
-      var lastIndex = ((this.currentPage + 1) * this.recordsPerPage) - 1;
-      var beginIndex = lastIndex - this.recordsPerPage + 1;
-
-
-
-      console.log(beginIndex, lastIndex);
-
+     
+      let lastIndex = (this.currentPage * this.recordsPerPage) - 1;
+      let beginIndex = lastIndex - this.recordsPerPage + 1;
       for (let r = beginIndex; r <= lastIndex; r++) {
         if (this.data[r] !== undefined) pageData_.push(this.data[r]);
       }
       this.pageData = [...pageData_];
-
-      console.log(this.pageData);
     }
   }
+
   previousPageData() {
     if (this.currentPage - 1 === 0) return;
     else {
       this.currentPage = this.currentPage - 1;
 
       var pageData_ = [];
-      let lastIndex = (this.currentPage - 1) * this.recordsPerPage - 1;
+      let lastIndex = (this.currentPage * this.recordsPerPage) - 1;
       let beginIndex = lastIndex - this.recordsPerPage + 1;
       for (let r = beginIndex; r <= lastIndex; r++) {
         if (this.data[r] !== undefined) pageData_.push(this.data[r]);
